@@ -1,9 +1,12 @@
 import React from "react";
+import LoginModal from "../LoginModal";
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showModal: false
+    };
   }
 
   render() {
@@ -13,19 +16,11 @@ class Navbar extends React.Component {
           <div class="container-fluid">
             <a class="navbar-brand">Navbar</a>
             <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
               <a class="navbar-brand">Register</a>
             </form>
           </div>
         </nav>
+        <LoginModal show={this.state.showModal} />
       </div>
     );
   }
